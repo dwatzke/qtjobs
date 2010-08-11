@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>613</width>
-    <height>416</height>
+    <width>617</width>
+    <height>465</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,7 +24,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -502,8 +502,8 @@ p, li { white-space: pre-wrap; }
      <y>229</y>
     </hint>
     <hint type="destinationlabel">
-     <x>581</x>
-     <y>230</y>
+     <x>556</x>
+     <y>250</y>
     </hint>
    </hints>
   </connection>
@@ -518,8 +518,8 @@ p, li { white-space: pre-wrap; }
      <y>229</y>
     </hint>
     <hint type="destinationlabel">
-     <x>623</x>
-     <y>231</y>
+     <x>604</x>
+     <y>249</y>
     </hint>
    </hints>
   </connection>
@@ -550,8 +550,8 @@ p, li { white-space: pre-wrap; }
      <y>177</y>
     </hint>
     <hint type="destinationlabel">
-     <x>623</x>
-     <y>178</y>
+     <x>604</x>
+     <y>194</y>
     </hint>
    </hints>
   </connection>
@@ -562,8 +562,8 @@ p, li { white-space: pre-wrap; }
    <slot>addFiles()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>56</x>
-     <y>467</y>
+     <x>60</x>
+     <y>81</y>
     </hint>
     <hint type="destinationlabel">
      <x>547</x>
@@ -578,8 +578,8 @@ p, li { white-space: pre-wrap; }
    <slot>removeSelectedFiles()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>301</x>
-     <y>460</y>
+     <x>104</x>
+     <y>81</y>
     </hint>
     <hint type="destinationlabel">
      <x>397</x>
@@ -594,12 +594,12 @@ p, li { white-space: pre-wrap; }
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>432</x>
-     <y>462</y>
+     <x>104</x>
+     <y>81</y>
     </hint>
     <hint type="destinationlabel">
-     <x>400</x>
-     <y>121</y>
+     <x>103</x>
+     <y>47</y>
     </hint>
    </hints>
   </connection>
@@ -614,7 +614,7 @@ p, li { white-space: pre-wrap; }
      <y>76</y>
     </hint>
     <hint type="destinationlabel">
-     <x>638</x>
+     <x>616</x>
      <y>45</y>
     </hint>
    </hints>
@@ -630,7 +630,7 @@ p, li { white-space: pre-wrap; }
      <y>105</y>
     </hint>
     <hint type="destinationlabel">
-     <x>638</x>
+     <x>616</x>
      <y>95</y>
     </hint>
    </hints>
@@ -646,7 +646,7 @@ p, li { white-space: pre-wrap; }
      <y>72</y>
     </hint>
     <hint type="destinationlabel">
-     <x>638</x>
+     <x>616</x>
      <y>34</y>
     </hint>
    </hints>
@@ -658,12 +658,12 @@ p, li { white-space: pre-wrap; }
    <slot>runJobs()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>357</x>
-     <y>458</y>
+     <x>368</x>
+     <y>446</y>
     </hint>
     <hint type="destinationlabel">
      <x>394</x>
-     <y>501</y>
+     <y>464</y>
     </hint>
    </hints>
   </connection>
@@ -674,12 +674,12 @@ p, li { white-space: pre-wrap; }
    <slot>stopJobs()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>515</x>
-     <y>31</y>
+     <x>539</x>
+     <y>60</y>
     </hint>
     <hint type="destinationlabel">
      <x>511</x>
-     <y>-2</y>
+     <y>0</y>
     </hint>
    </hints>
   </connection>
@@ -695,7 +695,23 @@ p, li { white-space: pre-wrap; }
     </hint>
     <hint type="destinationlabel">
      <x>577</x>
-     <y>-5</y>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dirBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>chooseDirectory()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>581</x>
+     <y>231</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>650</x>
+     <y>269</y>
     </hint>
    </hints>
   </connection>
@@ -710,6 +726,7 @@ p, li { white-space: pre-wrap; }
   <slot>runJobs()</slot>
   <slot>stopJobs()</slot>
   <slot>killJobs()</slot>
+  <slot>chooseDirectory()</slot>
  </slots>
  <buttongroups>
   <buttongroup name="buttonGroup"/>

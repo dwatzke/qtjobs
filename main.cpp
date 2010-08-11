@@ -24,26 +24,22 @@ int main(int argc, char *argv[])
 {
 	QApplication app(argc, argv);
 
-	// údaje pro QSettings (konfigurák)
+	/* this is for QSettings */
 	app.setApplicationName("qtjobs");
 	app.setOrganizationDomain("watzke.cz");
 
-	// nastavíme kódování pro lokalizaci a řetězce C
 	{
 	QTextCodec *utf8 = QTextCodec::codecForName("UTF-8");
 	QTextCodec::setCodecForCStrings(utf8);
 	QTextCodec::setCodecForTr(utf8);
 	}
 
-	// načteme lokalizaci
 	QTranslator tr;
 	tr.load(app.applicationName() + "_" + QLocale::system().name());
 	app.installTranslator(&tr);
 
-	// zobrazíme hlavní okno
 	MainWindow wnd;
 	wnd.show();
 
-	// spustíme smyčku událostí
 	return app.exec();
 }

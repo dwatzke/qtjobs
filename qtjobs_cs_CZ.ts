@@ -199,82 +199,87 @@ p, li { white-space: pre-wrap; }
         <translation>Seznam příkazů, které vrátily nenulovou návratovou hodnotu:</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="50"/>
+        <location filename="mainwindow.cpp" line="46"/>
         <source>Select files to be processed</source>
         <translation>Zvolte soubory ke zpracování</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="81"/>
+        <location filename="mainwindow.cpp" line="73"/>
         <source>Default</source>
         <translation>Výchozí</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="134"/>
-        <location filename="mainwindow.cpp" line="260"/>
-        <location filename="mainwindow.cpp" line="269"/>
-        <location filename="mainwindow.cpp" line="281"/>
-        <location filename="mainwindow.cpp" line="290"/>
+        <location filename="mainwindow.cpp" line="119"/>
+        <location filename="mainwindow.cpp" line="230"/>
+        <location filename="mainwindow.cpp" line="238"/>
+        <location filename="mainwindow.cpp" line="249"/>
+        <location filename="mainwindow.cpp" line="257"/>
         <source>Error!</source>
         <translation>Chyba!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="135"/>
+        <location filename="mainwindow.cpp" line="120"/>
         <source>You cannot remove the default profile!</source>
         <translation>Nemůžete smazat výchozí profil!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="261"/>
+        <location filename="mainwindow.cpp" line="208"/>
+        <source>Choose an output directory</source>
+        <translation>Zvolte výstupní adresář</translation>
+    </message>
+    <message>
+        <location filename="mainwindow.cpp" line="231"/>
         <source>Please add some files to the file list on the &quot;File list&quot; tab.</source>
         <oldsource>Please add some files to the file list on the first tab.</oldsource>
         <translation>Zadejte prosím nějaké soubory do seznamu na tabu &quot;Seznam souborů&quot;.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="270"/>
+        <location filename="mainwindow.cpp" line="239"/>
         <source>Please either enter an extension or uncheck the option for it&apos;s changing.</source>
         <translation>Buď zadejte příponu nebo odškrtněte volbu pro její změnu.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="282"/>
+        <location filename="mainwindow.cpp" line="250"/>
         <source>Please select a valid writable output directory.</source>
         <translation>Zadejte prosím platný zapisovatelný výstupní adresář.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="291"/>
+        <location filename="mainwindow.cpp" line="258"/>
         <source>The command must contain the $FILE variable (and should also contain the optional $OFILE variable).</source>
         <translation>Příkaz musí obsahovat proměnnou $FILE (a měl by obsahovat i volitelnou proměnnou $OFILE).</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="399"/>
+        <location filename="mainwindow.cpp" line="341"/>
         <source>command returned %1: %2</source>
         <translation>příkaz vrátil %1: %2</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="470"/>
+        <location filename="mainwindow.cpp" line="401"/>
         <source>Done!</source>
         <translation>Hotovo!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="471"/>
+        <location filename="mainwindow.cpp" line="402"/>
         <source>Done! All the files were successfully processed!</source>
         <translation>Hotovo! Všechny soubory byly úspěšně zpracovány!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="475"/>
+        <location filename="mainwindow.cpp" line="406"/>
         <source>Done with errors!</source>
         <translation>Hotovo s chybami!</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="476"/>
+        <location filename="mainwindow.cpp" line="407"/>
         <source>Done with errors! See the list of the failed commands on the &quot;Progress&quot; tab.</source>
         <translation>Hotovo s chybami! Vizte seznam příkazů, které selhaly, na tabu &quot;Průběh&quot;.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="483"/>
+        <location filename="mainwindow.cpp" line="414"/>
         <source>Processing was interrupted by pressing the Stop or the KILL button.</source>
         <translation>Zpracovávání bylo přerušeno stisknutím tlačítka Zastavit nebo ZABÍT.</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="482"/>
+        <location filename="mainwindow.cpp" line="413"/>
         <source>Interrupted!</source>
         <translation>Přerušeno!</translation>
     </message>
@@ -282,12 +287,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Runnable</name>
     <message>
-        <location filename="runnable.cpp" line="90"/>
+        <location filename="runnable.cpp" line="78"/>
         <source>command failed to start</source>
         <translation>spouštění příkazu selhalo</translation>
     </message>
     <message>
-        <location filename="runnable.cpp" line="93"/>
+        <location filename="runnable.cpp" line="81"/>
         <source>command failed due to an unknown error</source>
         <translation>příkaz selhal z neznámého důvodu</translation>
     </message>

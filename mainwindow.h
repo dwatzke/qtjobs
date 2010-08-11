@@ -41,9 +41,9 @@ protected:
 
 private:
 	Ui::MainWindow *ui;
-	QSettings m_profiles;
+	QSettings m_settings;
 	QList<Runnable*> m_runnables;
-	bool m_ok;
+	bool m_killed;
 
 	void loadProfiles(bool load_default = true);
 	void checkProcessing();
@@ -56,6 +56,8 @@ private slots:
 	void removeSelectedProfile();
 	void loadSelectedProfile();
 	void saveProfile();
+
+	void chooseDirectory();
 
 	void runJobs();
 	void stopJobs();

@@ -16,7 +16,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 
 #include "runnable.h"
 
-#include <QDebug>
+//#include <QDebug>
 #include <QDir>
 #include <QFileInfo>
 #include <QProcess>
@@ -25,28 +25,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 Runnable::Runnable(const RunnableSettings &s)
 	: m_stop(false), m_kill(false)
 {
-	/* zakážeme automatické ničení objektů Runnable, protože se o
-		jejich správu staráme sami */
+	/* we handle this by ourselves as it gives us more freedom */
 	setAutoDelete(false);
 
-	// uložíme příkaz a název vstupního souboru do členské proměnné
 	m_infile = s.infile;
 	m_command = s.command;
 
-	// sestavíme cestu k výstupnímu souboru...
 	QFileInfo fileInfo(m_infile);
 	QString outfile;
 
-	// adresář (stejný nebo zadaný?)
 	if(s.bSameDir)
 		outfile = fileInfo.dir().canonicalPath() + "/";
 	else
 		outfile = s.outdir + "/";
 
-	// soubor
 	QString fileName = fileInfo.fileName();
 
-	// změna přípony
 	if(s.bExtension)
 	{
 		QRegExp regex("^(.*)\\.(\\w+)$", Qt::CaseInsensitive,
@@ -56,14 +50,12 @@ Runnable::Runnable(const RunnableSettings &s)
 
 	outfile += fileName;
 
-	// nahradíme proměnné $FILE a $OFILE
 	m_command.replace("$FILE", "\""+m_infile+"\"");
 	m_command.replace("$OFILE", "\""+outfile+"\"");
 }
 
 void Runnable::run()
 {
-	// pokud uživatel stisknul "Zastavit" či "ZABÍT", tak ani nezačínáme
 	if(m_stop)
 	{
 		//qDebug() << "user pressed Stop or KILL, so not even starting";
@@ -71,59 +63,47 @@ void Runnable::run()
 		return;
 	}
 
-	//qDebug() << this << "running" << m_command;
+	//qDebug() << this << "about to run" << m_command;
 
 	QProcess process;
 
-	// spustíme příkaz
 	process.start(m_command, QIODevice::ReadWrite|QIODevice::Text);
 
-	// počkáme, až se spustí
 	if(process.waitForStarted(1000))
 	{
-		// vyšleme signál, že příkaz byl spuštěn
 		emit started(m_command);
 	}
 	else
-	{ // pokud spouštění příkazu selhalo
-		// chybová hláška
+	{
 		QString errorString = tr("command failed to start");
 
 		if(process.error() != QProcess::FailedToStart)
 			errorString = tr("command failed due to an unknown error");
 
-		// vyšleme signál, že příkaz selhal
 		emit failed(errorString + ": " + m_command);
-
-		/*process.kill();
-		// počkáme na zabití procesu, maximálně 1s
-		process.waitForFinished(1000);*/
 
 		emit destroyMe(this, true);
 
 		return;
 	}
 
-	// smyčka kontrolující zda uživatel stisknul "ZABÍT"
+	/* loop checking whether the "KILL" button has been pressed (every 200 ms) */
 	while(m_kill || !process.waitForFinished(200))
 	{
-		// pokud ne, dále čekáme na dokončení procesu
 		if(!m_kill)
 			continue;
 
-		qDebug() << "killing" << m_command;
+		//qDebug() << "killing" << m_command;
 
-		// zabijeme proces
 		process.kill();
-
 		break;
 	}
 
-	// počkáme na zabití procesu, maximálně 1s
 	process.waitForFinished(1000);
 
-	// příkaz doběhl
+	/* this condition is not right but it should be fixed if/when
+	   I which to using QProcess signals */
 	emit done(m_command, m_infile, m_kill ? 137 : process.exitCode());
-	// vyžadáme zničení objektu
+
 	emit destroyMe(this, !m_kill);
 }

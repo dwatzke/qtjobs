@@ -21,22 +21,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 #include <QRunnable>
 #include <QString>
 
-// struktura s informacemi pro Runnable
 struct RunnableSettings
 {
 	QString command;
 	QString extension;
 	QString outdir;
 	QString infile;
-	//QString outfile;
 	bool bExtension;
 	bool bSameDir;
 };
 
-// chceme ze třídy vysílat signály, proto ji zakládáme i na QObjectu
+/* to be able to use signals, we need to make it QObject-based... */
 class Runnable : public QObject, public QRunnable
 {
-	// nezapomeneme na makro Q_OBJECT
+	/* ... not forgetting the ol' good macro */
 	Q_OBJECT
 public:
 	Runnable(const RunnableSettings &s);
