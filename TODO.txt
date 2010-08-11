@@ -1,0 +1,4 @@
+* show how long did it take to run all the commands
+* remove all of the Czech comments and add some useful English ones
+* rework the Runnable class so that it uses QProcess signals
+  instead of handling it via waitFor...() functions
