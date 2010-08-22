@@ -35,7 +35,14 @@ int main(int argc, char *argv[])
 	}
 
 	QTranslator tr;
-	tr.load(app.applicationName() + "_" + QLocale::system().name());
+	QString trFile = app.applicationName() + "_" + QLocale::system().name();
+
+	tr.load(trFile);
+
+	/* TODO: the path cannot be hardcoded, fix this */
+	if(tr.isEmpty())
+		tr.load(trFile, "/usr/share/qtjobs");
+
 	app.installTranslator(&tr);
 
 	MainWindow wnd;
