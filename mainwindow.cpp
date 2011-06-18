@@ -145,6 +145,9 @@ void MainWindow::loadSelectedProfile()
 	bool autothread = m_settings.value("autothread", true).toBool();
 	int threadcount = m_settings.value("threadcount",
 					   QThread::idealThreadCount()).toInt();
+	QString name = "";
+	if(profile != "default")
+		name = m_settings.value("name").toString();
 	m_settings.endGroup();
 
 	ui->commandEdit->setText(command);
@@ -165,8 +168,14 @@ void MainWindow::loadSelectedProfile()
 		ui->outDirEdit->setText(outdir);
 	}
 
-	ui->threadcountCb->setChecked(!autothread);
+	//ui->threadcountCb->setChecked(!autothread);
+	if(autothread)
+		ui->radioButton->setChecked(true);
+	else
+		ui->threadcountRadio->setChecked(true);
 	ui->threadBox->setValue(threadcount);
+
+	ui->profileEdit->setText(name);
 }
 
 void MainWindow::saveProfile()
@@ -188,7 +197,7 @@ void MainWindow::saveProfile()
 	m_settings.setValue("outdir", ui->outDirEdit->text());
 	m_settings.setValue("samedir", ui->radioSame->isChecked());
 	m_settings.setValue("want_extension", ui->extCb->isChecked());
-	m_settings.setValue("autothread", !ui->threadcountCb->isChecked());
+	m_settings.setValue("autothread", !ui->threadcountRadio->isChecked());
 	m_settings.setValue("threadcount", ui->threadBox->value());
 	m_settings.endGroup();
 
@@ -199,7 +208,7 @@ void MainWindow::saveProfile()
 
 	loadSelectedProfile();
 
-	ui->profileEdit->setText("");
+	//ui->profileEdit->setText("");
 }
 
 void MainWindow::chooseDirectory()
@@ -266,7 +275,7 @@ void MainWindow::runJobs()
 
 	int threadcount = QThread::idealThreadCount();
 
-	if(ui->threadcountCb->isChecked())
+	if(ui->threadcountRadio->isChecked())
 		threadcount = ui->threadBox->value();
 
 	QThreadPool::globalInstance()->setMaxThreadCount(threadcount);
