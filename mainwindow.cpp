@@ -170,7 +170,7 @@ void MainWindow::loadSelectedProfile()
 
 	//ui->threadcountCb->setChecked(!autothread);
 	if(autothread)
-		ui->radioButton->setChecked(true);
+		ui->idealRadio->setChecked(true);
 	else
 		ui->threadcountRadio->setChecked(true);
 	ui->threadBox->setValue(threadcount);

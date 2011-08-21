@@ -300,12 +300,12 @@ p, li { white-space: pre-wrap; }
            <item>
             <layout class="QVBoxLayout" name="verticalLayout_2">
              <item>
-              <widget class="QRadioButton" name="radioButton">
+              <widget class="QRadioButton" name="idealRadio">
                <property name="text">
                 <string>Use the ideal thread count for this system (number of logical processors/cores)</string>
                </property>
-               <attribute name="buttonGroup">
-                <string>buttonGroup</string>
+               <attribute name="buttonGroup2">
+                <string>buttonGroup2</string>
                </attribute>
               </widget>
              </item>
@@ -316,8 +316,8 @@ p, li { white-space: pre-wrap; }
                  <property name="text">
                   <string>Use this thread count:</string>
                  </property>
-                 <attribute name="buttonGroup">
-                  <string>buttonGroup</string>
+                 <attribute name="buttonGroup2">
+                  <string>buttonGroup2</string>
                  </attribute>
                 </widget>
                </item>
@@ -718,5 +718,6 @@ p, li { white-space: pre-wrap; }
  </slots>
  <buttongroups>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup2"/>
  </buttongroups>
 </ui>
