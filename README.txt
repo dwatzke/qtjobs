@@ -7,7 +7,7 @@ text in the file called LICENSE that's located next to this README.
 ---
 To build the project, run:
 	lrelease qtjobs.pro
-	qmake # or qmake-qt4
+	qmake # or qmake-qt4 or qmake-qt5
 	make
 
 This creates a native binary called qtjobs that you can run like so:
