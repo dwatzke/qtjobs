@@ -14,7 +14,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 
-#include <QtGui/QApplication>
+#include <QtWidgets/QApplication>
 #include <QtCore/QTextCodec>
 #include <QtCore/QLocale>
 #include <QtCore/QTranslator>
@@ -28,11 +28,11 @@ int main(int argc, char *argv[])
 	app.setApplicationName("qtjobs");
 	app.setOrganizationDomain("watzke.cz");
 
-	{
+	/*{
 	QTextCodec *utf8 = QTextCodec::codecForName("UTF-8");
 	QTextCodec::setCodecForCStrings(utf8);
 	QTextCodec::setCodecForTr(utf8);
-	}
+	}*/
 
 	QTranslator tr;
 	QString trFile = app.applicationName() + "_" + QLocale::system().name();

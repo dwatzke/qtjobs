@@ -18,6 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>. */
 #include "ui_mainwindow.h"
 
 #include <QtGui>
+#include <QtWidgets>
 #include <QThreadPool>
 
 MainWindow::MainWindow(QWidget *parent) :
