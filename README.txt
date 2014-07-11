@@ -1,5 +1,5 @@
 QtJobs - a user-friendly way of multitasking
-(c) 2010  David Watzke <david@watzke.cz>
+(c) 2010-2014  David Watzke <david@watzke.cz>
 
 This project is released under the GPLv3+ license. You can read the license
 text in the file called LICENSE that's located next to this README.
